@@ -38,7 +38,7 @@ public class Operator extends BinaryFunction {
             }
         }
 
-        return (other instanceof Bracket);
+        return !(other instanceof Bracket);
     }
 
     public void add(EvalState state) {

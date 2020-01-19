@@ -5,7 +5,7 @@ import java.util.Scanner;
 import eval.Eval;
 import eval.backend.EvaluationError;
 import eval.backend.Token;
-import eval.backend.tokens.TokenDatabase;
+import eval.backend.TokenDatabase;
 
 /**
  * This is the main class of the project. This will contain very little of the
@@ -30,16 +30,16 @@ public class Main {
             System.out.print("\nEval Shell>");
             String line = shellin.nextLine().strip();
             
-            if(line == "") {}
+            if(line.equals("")) {}
 
-            else if(line == "?") {
+            else if(line.equals("?")) {
                 System.out.println("Operators: ");
                 for(Token a : TokenDatabase.kTokenList) {
-                    System.out.println(a.getID());
+                    System.out.print(a.getID() + "\t");
                 }
             }
             
-            else if(line == "exit") {
+            else if(line.equals("exit")) {
                 System.out.println("Exiting...");
                 running = false;
             } 
@@ -52,5 +52,7 @@ public class Main {
                 }
             }
         }
+
+        shellin.close();
     }
 }

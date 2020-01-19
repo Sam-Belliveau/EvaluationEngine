@@ -15,4 +15,8 @@ public class Constant extends Token {
     public void eval(EvalState state) {
         state.getNStack().push(mValue);
     }
+
+    public void add(EvalState state) {
+        eval(state);
+    }
 }

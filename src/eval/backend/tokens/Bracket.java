@@ -9,7 +9,7 @@ public class Bracket extends Token {
 
     private BracketType mType;
 
-    Bracket(String id, BracketType type) {
+    public Bracket(String id, BracketType type) {
         super(id);
         mType = type;
     }
@@ -21,7 +21,7 @@ public class Bracket extends Token {
             while(!state.getTStack().empty()) {
                 if(state.getTStack().peek() instanceof Bracket) {
                     state.getTStack().pop();
-                    return;
+                    break;
                 } else {
                     state.getTStack().pop().eval(state);
                 }

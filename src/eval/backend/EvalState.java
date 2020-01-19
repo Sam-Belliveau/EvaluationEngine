@@ -1,9 +1,11 @@
 package eval.backend;
 
+import java.util.regex.Pattern;
+import java.util.Scanner;
 import java.util.Stack;
 
 import eval.backend.Token;
-import eval.backend.tokens.TokenDatabase;
+import eval.backend.TokenDatabase;
 
 public class EvalState {
 
@@ -39,6 +41,32 @@ public class EvalState {
     }
 
     public void parse(String input) {
-        // TODO: parse string into stacks
+        Scanner command = new Scanner(input);
+        command.useDelimiter("");
+
+        while(command.hasNext()) {
+            if(command.hasNextDouble()) {
+                mNStack.push(command.nextDouble());
+                System.out.println(mNStack.peek());
+            } else {
+                boolean found = false;
+                for(Token t : TokenDatabase.kTokenList) {
+                    String pattern = Pattern.quote(t.getID());
+                    if(command.hasNext(pattern)) {
+                        command.next(pattern);
+                        t.add(this);
+                        System.out.println(t.getID());
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found) {
+                    throw new EvaluationError("Unknown Character \"" + command.next() + "\"");
+                }
+            }
+        }
+
+        command.close();
     }
 }

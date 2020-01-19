@@ -1,4 +1,4 @@
-package eval.backend.tokens;
+package eval.backend;
 
 import eval.backend.Token;
 import eval.backend.tokens.*;
@@ -16,8 +16,8 @@ public interface TokenDatabase {
 
     final Token[] kTokenList = {
         // Ignore Cbaracters
-        new Token(" "),
-        new Token(","),
+        new NoOP(" "),
+        new NoOP(","),
 
         // Parenthesis
         new Bracket("(", Bracket.BracketType.LEFT),
@@ -55,7 +55,7 @@ public interface TokenDatabase {
 
         // If Statements
         new TrinaryFunction("if", (cond, a, b) -> (DoubleToBool(cond)) ? a : b),
-        new Token("else"),
+        new NoOP("else"),
 
         // Constants
         new Constant("pi",  3.14159265358979323846264338327950288419716939937510),
