@@ -8,3 +8,5 @@ because there is a lot of circular refrences and without a garbage collector, ca
 The only resource I used when making the origional was the example implementation in [Reverse Polish Notation Wikipedia](https://en.wikipedia.org/wiki/Reverse_Polish_notation#Postfix_evaluation_algorithm)
 
 This project takes it a bit further by using an inheritance structure for the operators. This makes it really easy to add functions into the engine, and in the C++ version, users were able to add and remove variables.
+
+This project was made over the course of 1-2 days, but that can be attributed to my prior knowlage on the subject.
