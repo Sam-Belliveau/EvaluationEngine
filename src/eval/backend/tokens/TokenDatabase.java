@@ -21,11 +21,11 @@ public interface TokenDatabase {
 
         // Parenthesis
         new Bracket("(", Bracket.BracketType.LEFT),
-        new Bracket(")", Bracket.BracketType.LEFT),
+        new Bracket(")", Bracket.BracketType.RIGHT),
         new Bracket("[", Bracket.BracketType.LEFT),
-        new Bracket("]", Bracket.BracketType.LEFT),
+        new Bracket("]", Bracket.BracketType.RIGHT),
         new Bracket("{", Bracket.BracketType.LEFT),
-        new Bracket("}", Bracket.BracketType.LEFT),
+        new Bracket("}", Bracket.BracketType.RIGHT),
         
         // Operators
         new Operator(
