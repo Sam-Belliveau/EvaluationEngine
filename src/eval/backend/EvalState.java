@@ -95,6 +95,9 @@ public class EvalState {
                     number += input.charAt(i++);
                 }
 
+                // Move i back by one after evaluating number
+                --i;
+
                 // Add the number to the number stack
                 mNStack.push(Double.parseDouble(number));
             } else {

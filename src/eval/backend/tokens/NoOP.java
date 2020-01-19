@@ -12,9 +12,9 @@ import eval.backend.Token;
  *
  * It is really dumb, but it is useful none the less
  *
- * \/ add(3, 4) 
- * \/ add(3 4) 
- * \/ add 3 4 
+ * \/ add(3, 4)
+ * \/ add(3 4)
+ * \/ add 3 4
  * == 7
  */
 public class NoOP extends Token {
@@ -23,6 +23,10 @@ public class NoOP extends Token {
         super(id);
     }
 
+    /**
+     * NoOP literally means No Operations
+     * so thats exactly what it does here
+     */
     public void exec(EvalState state) {
     }
 

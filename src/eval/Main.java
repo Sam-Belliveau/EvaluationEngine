@@ -27,15 +27,15 @@ public class Main {
         System.out.println("Functions like max can be used like \"max(a, b)\"\n");
 
         System.out.println("Use '?' to get a list of operators");
-        System.out.println("Use 'exit' to quit the program");
+        System.out.println("Use 'exit' to quit the program\n");
 
         Scanner shellin = new Scanner(System.in);
 
         boolean running = true;
         while(running) {
-            System.out.print("\nEval Shell>");
+            System.out.print("Eval Shell>");
             String line = shellin.nextLine().strip();
-            
+
             if(line.equals("")) {}
 
             else if(line.equals("?")) {
@@ -43,13 +43,14 @@ public class Main {
                 for(Token a : TokenDatabase.kTokenList) {
                     System.out.print(a.getID() + "\t");
                 }
+                System.out.println();
             }
-            
+
             else if(line.equals("exit")) {
                 System.out.println("Exiting...");
                 running = false;
-            } 
-            
+            }
+
             else {
                 try {
                     System.out.println(Eval.eval(line));
@@ -57,6 +58,8 @@ public class Main {
                     System.out.println(error.getMessage());
                 }
             }
+
+            System.out.println();
         }
 
         shellin.close();
