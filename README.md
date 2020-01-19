@@ -2,7 +2,8 @@
 
 This project is my submission project for APCS at Stuyvesant Highschool.
 
-Much of the code is an adapted version of [the same thing but in C++](https://gist.github.com/Sam-Belliveau/3c90f0f05368f0e5dbb0c9a0b37e1025) which I also made.
+Much of the code is an adapted version of [the same thing but in C++](https://gist.github.com/Sam-Belliveau/3c90f0f05368f0e5dbb0c9a0b37e1025) which I also made. The C++ version of this ended up being really difficult
+because there is a lot of circular refrences and without a garbage collector, can lead to memory leaks.
 
 The only resource I used when making the origional was the example implementation in [Reverse Polish Notation Wikipedia](https://en.wikipedia.org/wiki/Reverse_Polish_notation#Postfix_evaluation_algorithm)
 
