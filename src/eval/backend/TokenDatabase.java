@@ -43,13 +43,14 @@ public interface TokenDatabase {
 
             // If Statements
             new TrinaryFunction("ifelse", (cond, a, b) -> (DoubleToBool(cond)) ? a : b),
+            new BinaryFunction("if", (cond, a) -> (DoubleToBool(cond)) ? a : 0.0),
 
             // Constants
-            new Constant("pi", 3.14159265358979323846264338327950288419716939937510),
-            new Constant("e", 2.71828182845904523536028747135266249775724709369995),
-            new Constant("phi", 1.61803398874989484820458683436563811772030917980576), 
-            new Constant("true", 1.0),
-            new Constant("false", 0),
+            new Constant("pi",    3.14159265358979323846264338327950288419716939937510),
+            new Constant("e",     2.71828182845904523536028747135266249775724709369995),
+            new Constant("phi",   1.61803398874989484820458683436563811772030917980576),
+            new Constant("true",  1.0),
+            new Constant("false", 0.0),
 
             // Operators
             new Operator("and", (a, b) -> BoolToDouble(DoubleToBool(a) && DoubleToBool(b)), 0, Operator.Order.LEFT),

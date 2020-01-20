@@ -1,7 +1,5 @@
 package eval.backend;
 
-import java.util.regex.Pattern;
-import java.util.Scanner;
 import java.util.Stack;
 
 import eval.backend.Token;
