@@ -11,13 +11,17 @@ import eval.backend.Token;
  *      - Left brackets can not be evaluated by anything other than a right bracket
  * - When the right bracket comes, it evaluates everything until it sees a left bracket
  * - When this happens, everything inside the brackets is evaluated
+ * 
+ * There is another type of Bracket which I created called a Flush. A flush basically
+ * is like the right bracket except it doesnt remove the left semicolon. This could be
+ * used like max(3 + 5, 3 * 5) or min(7 * 3; 2 + 3). 
  */
 public class Bracket extends Token {
 
     /**
      * Enum used to store which type of bracket it is
      */
-    public enum BracketType { LEFT, RIGHT };
+    public enum BracketType { LEFT, RIGHT, FLUSH };
 
     /**
      * Which type of bracket the class is
@@ -44,7 +48,10 @@ public class Bracket extends Token {
                 // If the token is a left bracket [right brackets are never added to stack]
                 // Then remove it and exit the loop.
                 if(state.getTStack().peek() instanceof Bracket) {
-                    state.getTStack().pop();
+                    // The flush bracket does not remove the bracket
+                    if(mType != BracketType.FLUSH) {
+                        state.getTStack().pop();
+                    }
                     break;
                 }
 

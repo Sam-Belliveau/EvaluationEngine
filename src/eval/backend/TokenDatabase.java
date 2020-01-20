@@ -21,7 +21,7 @@ public interface TokenDatabase {
      */
     final Token[] kTokenList = {
             // Ignore Cbaracters
-            new NoOP(" "), new NoOP(","),
+            new NoOP(" "),
 
             // Parenthesis
             new Bracket("(", Bracket.BracketType.LEFT),
@@ -30,6 +30,8 @@ public interface TokenDatabase {
             new Bracket("]", Bracket.BracketType.RIGHT),
             new Bracket("{", Bracket.BracketType.LEFT),
             new Bracket("}", Bracket.BracketType.RIGHT),
+            new Bracket(",", Bracket.BracketType.FLUSH),
+            new Bracket(";", Bracket.BracketType.FLUSH),
 
             // Operators
             new Operator("+",   (a, b) -> a + b, 2, Operator.Order.LEFT),
@@ -88,6 +90,6 @@ public interface TokenDatabase {
             new BinaryFunction("sub", (a, b) -> a - b),
             new BinaryFunction("mul", (a, b) -> a * b),
             new BinaryFunction("div", (a, b) -> a / b),
-            new BinaryFunction("pow", (a, b) -> Math.pow(a, b)), new BinaryFunction("mod", (a, b) -> a % b) 
+            new BinaryFunction("pow", (a, b) -> Math.pow(a, b))
         };
 }
