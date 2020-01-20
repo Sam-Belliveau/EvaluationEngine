@@ -33,7 +33,7 @@ public class TrinaryFunction extends Token {
 
     public void eval(EvalState state) {
         // Check for issues with the number stack
-        EvaluationError.check(state, this, 4);
+        EvaluationError.check(state, this, 3);
 
         // Pass items from the number stack to the function
         // then add the result back to the number stack
