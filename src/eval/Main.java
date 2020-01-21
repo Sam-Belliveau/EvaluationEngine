@@ -26,6 +26,8 @@ public class Main {
         
         System.out.println("Functions like max can be used like \"max(a, b)\"\n");
 
+        System.out.println("This has no support for implicit multiplication, eg. 2(3 + 4)\n");
+
         System.out.println("Use '?' to get a list of operators");
         System.out.println("Use 'exit' to quit the program\n");
 

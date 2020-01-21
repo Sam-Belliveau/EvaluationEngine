@@ -96,8 +96,12 @@ public class EvalState {
                 // Move i back by one after evaluating number
                 --i;
 
-                // Add the number to the number stack
-                mNStack.push(Double.parseDouble(number));
+                try {
+                    // Add the number to the number stack
+                    mNStack.push(Double.parseDouble(number));
+                } catch (NumberFormatException e) {
+                    throw new EvaluationError("Error parsing number \"" + number + "\""); 
+                }
             } else {
                 // Boolean used to check if any token was found
                 boolean found = false;
