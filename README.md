@@ -1,5 +1,7 @@
 # EvaluationEngine
 
+Run by cd'ing into the root directory and running `java -cp ./bin/ eval.Main`
+
 This project is my submission project for APCS at Stuyvesant Highschool.
 
 Much of the code is an adapted version of [the same thing but in C++](https://gist.github.com/Sam-Belliveau/3c90f0f05368f0e5dbb0c9a0b37e1025) which I also made. The C++ version of this ended up being really difficult
