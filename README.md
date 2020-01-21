@@ -1,5 +1,8 @@
 # EvaluationEngine
 
+Make sure that Java 11 is used when running the program. Otherwise, 
+you will need to compile the project yourself.
+
 Run by cd'ing into the root directory and running `java -cp bin eval.Main`
 
 This project is my submission project for APCS at Stuyvesant Highschool.
