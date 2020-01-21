@@ -1,6 +1,6 @@
 # EvaluationEngine
 
-Run by cd'ing into the root directory and running `java -cp ./bin/ eval.Main`
+Run by cd'ing into the root directory and running `java -cp bin eval.Main`
 
 This project is my submission project for APCS at Stuyvesant Highschool.
 
